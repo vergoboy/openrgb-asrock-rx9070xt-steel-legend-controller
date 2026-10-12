@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_URL="https://github.com/VirulentArc/openrgb-asrock-rx9070xt-steel-legend-controller.git"
-OPENRGB_URL="https://gitlab.com/CalcProgrammer1/OpenRGB.git"
+REPO_URL="https://github.com/vergoboy/openrgb-asrock-rx9070xt-steel-legend-controller.git"
+OPENRGB_URL="https://github.com/CalcProgrammer1/OpenRGB.git"
 OPENRGB_COMMIT="4306603a28c86e91f4dd4f89b41efd3005f0b810"
 WORKSPACE="/usr/local/src/openrgb-asrock-steel-legend"
 STATE_DIR="/usr/local/share/openrgb-asrock-steel-legend"

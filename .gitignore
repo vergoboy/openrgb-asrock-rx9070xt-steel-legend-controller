@@ -1,0 +1,8 @@
+# Stray files
+/16
+
+# Vendor reference binaries (ASRock/Intel/Windows tools) and virtualenvs.
+# These are proprietary downloads used for offline reverse engineering only,
+# not redistributable in a public repository.
+/b580/ref/
+/b580/tools/.venv/

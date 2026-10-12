@@ -1,0 +1,27 @@
+<!-- ASRock Arc B580 Steel Legend passthrough hostdev fragment for win10.xml
+     Prepare only. APPLY ONLY after VT-d/DMAR is active AND /sys/kernel/iommu_groups
+     shows both 03:00.0 (GPU) and 04:00.0 (audio) isolated together.
+
+     Insert these two <hostdev> blocks inside <devices> (before </devices>),
+     then run:
+        virsh -c qemu:///system define /tmp/win10-with-gpu.xml
+        virsh -c qemu:///system start win10 --paused
+
+     To reverse: restore /etc/libvirt/qemu/win10.xml.orig and re-define.
+-->
+    <hostdev mode='subsystem' type='pci' managed='yes'>
+      <driver name='vfio'/>
+      <source>
+        <address domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
+      </source>
+      <alias name='hostdev0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x0'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='pci' managed='yes'>
+      <driver name='vfio'/>
+      <source>
+        <address domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
+      </source>
+      <alias name='hostdev1'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x1'/>
+    </hostdev>

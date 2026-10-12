@@ -1,0 +1,17 @@
+/build/
+*.o
+*.obj
+*.ko
+*.mod
+*.mod.c
+*.cmd
+Module.symvers
+Module.markers
+modules.order
+.qmake.stash
+/diagnostics/pcode_rgb_probe
+/diagnostics/i2c_endpoint_probe
+/diagnostics/b580_rgb_write
+/diagnostics/pcode_rgb_write
+/diagnostics/isp_i2c_probe
+/diagnostics/*.log
